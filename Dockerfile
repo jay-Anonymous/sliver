@@ -43,7 +43,7 @@ RUN /go/src/github.com/bishopfox/sliver/go-tests.sh
 
 # STAGE: production
 ## Final dockerized form of Sliver
-FROM --platform=linux/amd64 debian:bookworm-slim as production
+FROM --platform=linux/amd64 debian:12.5-slim as production
 
 ### Install production packages
 RUN apt-get update --fix-missing \
@@ -94,7 +94,7 @@ ENTRYPOINT [ "/opt/sliver-server" ]
 # STAGE: production-slim (about 1Gb smaller)
 ### Slim production image, i.e. without MSF and assoicated libraries
 ### Still include GCC and MinGW for cross-platform generation
-FROM --platform=linux/amd64 debian:bookworm-slim as production-slim
+FROM --platform=linux/amd64 debian:12.5-slim as production-slim
 
 ### Install production packages
 RUN apt-get update --fix-missing \
