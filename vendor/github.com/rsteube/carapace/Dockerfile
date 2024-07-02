@@ -1,4 +1,4 @@
-FROM golang:1.20-bullseye as base
+FROM golang:1.23rc1-bullseye as base
 LABEL org.opencontainers.image.source https://github.com/rsteube/carapace
 USER root
 
